@@ -24,31 +24,19 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     company: 'E-Group Ltd.',
     role: 'Full Stack ASP.NET Developer',
     period: 'Present',
-    description: [
-      'Design, develop, and maintain full-stack web applications using ASP.NET Core, C#, and Microsoft SQL Server.',
-      'Build scalable APIs and interactive front-end interfaces to meet client requirements.',
-      'Manage deployment processes and ensure applications are fast, reliable, and secure on live servers.'
-    ],
+    description: 'Developing and maintaining full-stack web applications using ASP.NET Core, C#, and SQL Server, building scalable APIs and interactive UIs.',
   },
   {
     company: 'E-Group Ltd.',
     role: 'ASP.NET Developer (Internship)',
     period: 'Jun 2024 - Sep 2024',
-    description: [
-      'Gained hands-on experience in developing ASP.NET web applications with Microsoft SQL Server.',
-      'Assisted the development team in building and testing new features for various client projects.',
-      'Learned industry best practices for code quality, version control, and teamwork.',
-    ],
+    description: 'Gained hands-on experience developing ASP.NET applications, assisting the senior team with testing and building new features.',
   },
   {
     company: 'Private Tutor',
     role: 'SSC & HSC Subjects',
     period: '2019 - Present',
-    description: [
-      'Taught core SSC subjects, improving students\' foundational knowledge and problem-solving skills.',
-      'Designed personalized lesson plans and created engaging study materials to enhance learning.',
-      'Developed and edited educational content for clarity, accuracy, and effectiveness.'
-    ],
+    description: 'Provided personalized tutoring for SSC & HSC subjects, focusing on core concepts and strengthening problem-solving skills.',
   },
 ];
 

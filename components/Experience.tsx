@@ -1,65 +1,64 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import SectionHeader from './SectionHeader';
 import { EXPERIENCE_DATA } from '../constants';
-import { ChevronRight } from 'lucide-react';
 
 const Experience: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
-  const INITIAL_ITEMS = 2;
-  const visibleExperiences = showAll ? EXPERIENCE_DATA : EXPERIENCE_DATA.slice(0, INITIAL_ITEMS);
+  const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -100px 0px', // Animate items when they are 100px from the bottom of the viewport
+    });
+
+    timelineRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      timelineRefs.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
   return (
     <section id="experience" className="py-24">
       <SectionHeader title="Where I've Worked" />
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-3xl mx-auto">
         {/* Vertical Timeline Spine */}
-        <div className="absolute top-0 h-full w-0.5 bg-dark-slate left-5 md:left-1/2 md:-translate-x-1/2"></div>
+        <div className="absolute top-2 h-full w-0.5 bg-dark-slate left-4"></div>
 
         <div className="space-y-12">
-          {visibleExperiences.map((item, index) => (
-            <div key={index} className="relative">
+          {EXPERIENCE_DATA.map((item, index) => (
+            <div 
+              key={index}
+              ref={el => { timelineRefs.current[index] = el }}
+              className="relative pl-12 timeline-entry"
+            >
               {/* Timeline Dot */}
-              <div className="absolute w-5 h-5 bg-accent rounded-full left-5 -translate-x-[9px] mt-1 md:left-1/2 md:-translate-x-1/2 z-10 border-4 border-primary"></div>
+              <div className="absolute w-4 h-4 bg-accent rounded-full left-4 -translate-x-[7px] mt-2 z-10 border-4 border-primary"></div>
 
-              {/* Content Card Container */}
-              <div className="pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-x-8">
-                
-                {/* Position the card based on index (even/odd) */}
-                <div className={`
-                  ${index % 2 === 0 ? 'md:col-start-1 md:row-start-1 md:text-right' : 'md:col-start-2 md:row-start-1'}
-                `}>
-                  <div className="bg-secondary p-6 rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 ease-custom-bezier">
-                    <h3 className="text-xl font-semibold text-light-slate font-sans">
-                      {item.role} <span className="text-accent">@ {item.company}</span>
-                    </h3>
-                    <p className="text-sm my-2 font-mono text-slate/80">{item.period}</p>
-                    <ul className="space-y-2 text-slate text-left">
-                      {item.description.map((desc, i) => (
-                        <li key={i} className="flex items-start">
-                          <ChevronRight className="w-4 h-4 mr-2 mt-1 text-accent flex-shrink-0" />
-                          <span>{desc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
+              {/* Content */}
+              <div className="p-1 group">
+                 <p className="text-sm mb-1 font-mono text-slate/80">{item.period}</p>
+                 <h3 className="text-xl font-semibold text-light-slate font-sans group-hover:text-accent transition-colors duration-300">
+                    {item.role} <span className="text-accent/80">@ {item.company}</span>
+                 </h3>
+                 <p className="text-slate mt-2 text-base">
+                    {item.description}
+                 </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-      
-      {EXPERIENCE_DATA.length > INITIAL_ITEMS && (
-        <div className="text-center mt-12">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-block px-8 py-4 border border-accent text-accent rounded-sm hover:bg-accent/10 transition-all duration-300 ease-custom-bezier font-mono"
-          >
-            {showAll ? 'Show Less' : 'Show More'}
-          </button>
-        </div>
-      )}
     </section>
   );
 };

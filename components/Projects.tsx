@@ -1,85 +1,135 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionHeader from './SectionHeader';
 import { PROJECTS_DATA } from '../constants';
-import { Github, ExternalLink, ChevronRight } from 'lucide-react';
+import { Github, ExternalLink, ChevronRight, ChevronDown } from 'lucide-react';
 import { Project } from '../types';
 import ProjectImageCollage from './ProjectImageCollage';
 
-const FeaturedProjectCard: React.FC<{ project: Project; isReversed: boolean }> = ({ project, isReversed }) => {
-  const textOrder = isReversed ? 'md:order-1' : 'md:order-2';
-  const imageOrder = isReversed ? 'md:order-2' : 'md:order-1';
-  const textAlign = isReversed ? 'md:text-left' : 'md:text-right';
-  const contentAlign = isReversed ? 'md:items-start' : 'md:items-end';
-  const tagAlign = isReversed ? 'md:justify-start' : 'md:justify-end';
+const FeaturedProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center mb-16">
-      <div className={`md:col-span-3 ${imageOrder}`}>
-        <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer" className="block rounded-sm">
-            <ProjectImageCollage images={project.images} title={project.title} />
-        </a>
-      </div>
-      <div className={`relative z-20 md:col-span-2 ${textOrder} ${contentAlign} flex flex-col`}>
-        <p className="text-accent text-sm mb-2 font-mono">{project.role || 'Featured Project'}</p>
-        <h3 className={`text-2xl font-bold text-light-slate mb-4 hover:text-accent transition-colors duration-300 ${textAlign}`}>
-            <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
-                {project.title} <span className="text-accent/80 text-lg font-mono">({project.year})</span>
+    <div className="mb-20 group transition-all duration-300 ease-custom-bezier">
+      {/* 1. Title & Links */}
+      <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+        <div>
+          <p className="text-accent text-sm font-mono">{project.role || 'Featured Project'}</p>
+          <h3 className="text-2xl font-bold text-light-slate">
+            <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+              {project.title}
+              <span className="text-accent/80 text-lg font-mono ml-2">({project.year})</span>
             </a>
-        </h3>
-        <div className="bg-secondary p-6 rounded-sm shadow-lg mb-4">
-          <p className={`text-slate ${textAlign}`}>{project.description}</p>
-          {project.keyFeatures && (
-            <ul className="mt-4 space-y-2">
-              {project.keyFeatures.map(feature => (
-                <li key={feature} className={`flex items-start gap-2 text-sm text-slate/90 ${isReversed ? '' : 'md:flex-row-reverse'}`}>
-                  <ChevronRight className="w-4 h-4 mt-1 text-accent flex-shrink-0" />
-                  <span className={`flex-grow ${textAlign}`}>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          )}
+          </h3>
         </div>
-        <ul className={`flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate mb-4 ${tagAlign} font-mono`}>
-          {project.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
-        <div className={`flex items-center gap-4 ${tagAlign}`}>
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-light-slate hover:text-accent transition-colors duration-300">
+        <div className="flex items-center gap-4 self-start sm:self-center">
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-light-slate hover:text-accent transition-colors duration-300" aria-label={`${project.title} GitHub repository`}>
             <Github size={24} />
           </a>
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-light-slate hover:text-accent transition-colors duration-300">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-light-slate hover:text-accent transition-colors duration-300" aria-label={`${project.title} live site`}>
               <ExternalLink size={24} />
             </a>
           )}
+        </div>
+      </div>
+
+      {/* 2. Image Collage */}
+      <div className="mb-6 rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300">
+         <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer" className="block rounded-sm overflow-hidden">
+            <ProjectImageCollage images={project.images} title={project.title} />
+        </a>
+      </div>
+
+      {/* 3. Toggle Button */}
+      <div className="text-center my-4">
+        <button
+          onClick={() => setIsDescriptionVisible(!isDescriptionVisible)}
+          className="inline-flex items-center justify-center px-6 py-2 border border-accent/50 text-accent/80 rounded-sm hover:bg-accent/10 transition-all duration-300 ease-custom-bezier font-mono text-sm"
+          aria-expanded={isDescriptionVisible}
+        >
+          <span>{isDescriptionVisible ? 'Hide Description' : 'Show Description'}</span>
+          <ChevronDown className={`w-5 h-5 ml-2 transition-transform duration-300 ${isDescriptionVisible ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
+
+      {/* 4. Description, Features, and Tags (Collapsible) */}
+      <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isDescriptionVisible ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="grid md:grid-cols-2 gap-6 pt-4">
+          <div className="bg-secondary p-6 rounded-sm">
+            <p className="text-slate">{project.description}</p>
+          </div>
+          <div className="bg-secondary p-6 rounded-sm">
+            {project.keyFeatures && (
+              <div className="mb-4">
+                <ul className="space-y-2">
+                  {project.keyFeatures.map(feature => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-slate/90">
+                      <ChevronRight className="w-4 h-4 mt-1 text-accent flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate font-mono mt-4">
+              {project.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
+
 const OtherProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+
   return (
-    <div className="bg-secondary rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-custom-bezier flex flex-col group overflow-hidden">
-      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-        <ProjectImageCollage images={project.images} title={project.title} />
-      </a>
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-start gap-4 mb-4">
-          <h3 className="text-xl font-bold text-light-slate group-hover:text-accent transition-colors duration-300">
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+    <div className="bg-secondary rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-custom-bezier flex flex-col group">
+      {/* 1. Title and Links */}
+      <div className="p-6 pb-4">
+        <div className="flex justify-between items-start gap-4">
+          <h3 className="text-xl font-bold text-light-slate">
+             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="group-hover:text-accent transition-colors duration-300">
                 {project.title}
                 <span className="block text-accent/80 text-base font-mono mt-1">({project.year})</span>
-            </a>
+             </a>
           </h3>
           <div className="flex items-center gap-4 flex-shrink-0 mt-1">
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} GitHub repository`} className="text-light-slate hover:text-accent transition-colors duration-300"><Github size={22} /></a>
               {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} live site`} className="text-light-slate hover:text-accent transition-colors duration-300"><ExternalLink size={22} /></a>}
           </div>
         </div>
-        <p className="text-slate text-sm flex-grow mb-4">{project.description}</p>
-        <ul className="flex flex-wrap gap-x-4 text-xs text-slate font-mono mt-auto">
-          {project.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
+      </div>
+
+      {/* 2. Image Collage */}
+      <div className="px-6">
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block rounded-sm overflow-hidden">
+            <ProjectImageCollage images={project.images} title={project.title} />
+        </a>
+      </div>
+      
+      {/* 3. Toggle Button */}
+       <div className="my-4 px-6">
+          <button
+            onClick={() => setIsDescriptionVisible(!isDescriptionVisible)}
+            className="w-full flex items-center justify-center px-4 py-2 border border-accent/40 text-accent/70 rounded-sm hover:bg-accent/10 transition-all duration-300 ease-custom-bezier font-mono text-xs"
+            aria-expanded={isDescriptionVisible}
+          >
+            <span>{isDescriptionVisible ? 'Hide Details' : 'Show Details'}</span>
+            <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${isDescriptionVisible ? 'rotate-180' : ''}`} />
+          </button>
+        </div>
+
+      {/* 4. Description and Tags (Collapsible) */}
+      <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isDescriptionVisible ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="px-6 pb-6 flex flex-col flex-grow">
+            <p className="text-slate text-sm flex-grow mb-4">{project.description}</p>
+            <ul className="flex flex-wrap gap-x-4 text-xs text-slate font-mono mt-auto">
+            {project.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+        </div>
       </div>
     </div>
   )
@@ -93,8 +143,8 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-24">
       <SectionHeader title="Things I've Built" />
       <div>
-        {featuredProjects.map((project, index) => (
-          <FeaturedProjectCard key={project.title} project={project} isReversed={index % 2 !== 0} />
+        {featuredProjects.map((project) => (
+          <FeaturedProjectCard key={project.title} project={project} />
         ))}
       </div>
 
