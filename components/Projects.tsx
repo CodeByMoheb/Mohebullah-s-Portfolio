@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeader from './SectionHeader';
 import { PROJECTS_DATA } from '../constants';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, ChevronRight } from 'lucide-react';
 import { Project } from '../types';
 
 const FeaturedProjectCard: React.FC<{ project: Project; isReversed: boolean }> = ({ project, isReversed }) => {
@@ -20,7 +20,7 @@ const FeaturedProjectCard: React.FC<{ project: Project; isReversed: boolean }> =
         </a>
       </div>
       <div className={`relative z-20 md:col-span-2 ${textOrder} ${contentAlign} flex flex-col`}>
-        <p className="text-accent text-sm mb-2">Featured Project</p>
+        <p className="text-accent text-sm mb-2">{project.role || 'Featured Project'}</p>
         <h3 className={`text-2xl font-bold text-light-slate mb-4 hover:text-accent transition-colors duration-300 ${textAlign}`}>
             <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noopener noreferrer">
                 {project.title} <span className="text-accent/80 text-lg font-mono">({project.year})</span>
@@ -28,6 +28,16 @@ const FeaturedProjectCard: React.FC<{ project: Project; isReversed: boolean }> =
         </h3>
         <div className="bg-secondary p-6 rounded-sm shadow-lg mb-4">
           <p className={`text-slate ${textAlign}`}>{project.description}</p>
+          {project.keyFeatures && (
+            <ul className="mt-4 space-y-2">
+              {project.keyFeatures.map(feature => (
+                <li key={feature} className={`flex items-start gap-2 text-sm text-slate/90 ${isReversed ? '' : 'md:flex-row-reverse'}`}>
+                  <ChevronRight className="w-4 h-4 mt-1 text-accent flex-shrink-0" />
+                  <span className={`flex-grow ${textAlign}`}>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <ul className={`flex flex-wrap gap-x-4 gap-y-2 text-sm text-dark-slate mb-4 ${tagAlign} font-mono`}>
           {project.tags.map(tag => <li key={tag}>{tag}</li>)}

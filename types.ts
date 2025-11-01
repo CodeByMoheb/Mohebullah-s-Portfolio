@@ -17,6 +17,7 @@ export interface ExperienceItem {
 export interface Skill {
   name:string;
   icon: React.ReactNode;
+  description?: string;
 }
 
 export interface SkillCategory {
@@ -33,6 +34,9 @@ export interface Project {
   githubUrl: string;
   featured?: boolean;
   year: string;
+  role?: string;
+  keyFeatures?: string[];
+  techHighlight?: string;
 }
 
 export interface Certification {
