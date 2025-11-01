@@ -43,13 +43,13 @@ const Experience: React.FC = () => {
               className="relative pl-12 timeline-entry"
             >
               {/* Timeline Dot */}
-              <div className="absolute w-4 h-4 bg-accent rounded-full left-4 -translate-x-[7px] mt-2 z-10 border-4 border-primary"></div>
+              <div className="absolute w-4 h-4 bg-accent-cyan rounded-full left-4 -translate-x-[7px] mt-2 z-10 border-4 border-primary"></div>
 
               {/* Content */}
               <div className="p-1 group">
                  <p className="text-sm mb-1 font-mono text-slate/80">{item.period}</p>
-                 <h3 className="text-xl font-semibold text-light-slate font-sans group-hover:text-accent transition-colors duration-300">
-                    {item.role} <span className="text-accent/80">@ {item.company}</span>
+                 <h3 className="text-xl font-semibold text-light-slate font-sans group-hover:text-accent-cyan transition-colors duration-300">
+                    {item.role} <span className="text-accent-pink/80">@ {item.company}</span>
                  </h3>
                  <p className="text-slate mt-2 text-base">
                     {item.description}

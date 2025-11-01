@@ -10,7 +10,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
       <h2 className="text-2xl md:text-3xl font-bold text-light-slate whitespace-nowrap font-sans">
         {title}
       </h2>
-      <div className="h-px bg-dark-slate w-full ml-4"></div>
+      <div className="h-px bg-gradient-to-r from-accent-pink to-accent-cyan w-full ml-4"></div>
     </div>
   );
 };

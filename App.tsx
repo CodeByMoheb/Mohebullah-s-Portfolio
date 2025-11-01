@@ -23,7 +23,7 @@ function App() {
     } else {
       const element = document.getElementById(page);
       if (element) {
-        const y = element.getBoundingClientRect().top + window.scrollY - 100; // 100px offset for header
+        const y = element.getBoundingClientRect().top + window.scrollY - 80; // 80px offset for fixed header
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
@@ -77,14 +77,14 @@ function App() {
 
       <div className="hidden md:block fixed bottom-0 right-12 w-10 z-30">
         <div className="flex flex-col items-center">
-          <a href="mailto:mohebullah.cse@gmail.com" className="text-sm writing-vertical-rl text-slate hover:text-accent transform hover:-translate-y-1 transition-all duration-300 font-mono tracking-widest">
+          <a href="mailto:mohebullah.cse@gmail.com" className="text-sm writing-vertical-rl text-slate hover:text-accent-cyan transform hover:-translate-y-1 transition-all duration-300 font-mono tracking-widest">
             mohebullah.cse@gmail.com
           </a>
           <div className="w-px h-24 bg-slate mt-6"></div>
         </div>
       </div>
 
-      <main className="container mx-auto px-6 md:px-24 lg:px-48">
+      <main className="container mx-auto px-6 md:px-24 lg:px-48 pt-24">
         <div id="hero"><Hero onNavigate={handleHeroNavigate} /></div>
         <div id="projects"><Projects /></div>
         <div id="about"><About /></div>

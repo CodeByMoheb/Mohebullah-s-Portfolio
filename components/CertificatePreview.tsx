@@ -65,7 +65,7 @@ const CertificatePreview: React.FC<CertificatePreviewProps> = ({ url, fallbackIm
     <div className="w-24 h-24 relative flex-shrink-0">
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-secondary rounded-sm">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-cyan"></div>
         </div>
       )}
       <img

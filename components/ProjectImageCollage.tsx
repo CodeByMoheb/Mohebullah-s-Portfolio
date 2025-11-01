@@ -9,7 +9,7 @@ interface ProjectImageCollageProps {
 const ProjectImageCollage: React.FC<ProjectImageCollageProps> = ({ images, title }) => {
   // Fallback UI for projects with one or zero images
   if (!images || images.length < 2) {
-    const singleImageUrl = images?.[0] || `https://placehold.co/600x400/0a192f/64ffda?text=${encodeURIComponent(title)}`;
+    const singleImageUrl = images?.[0] || `https://placehold.co/600x400/0D0D2B/00F2EA?text=${encodeURIComponent(title)}`;
     return (
       <div className="aspect-w-16 aspect-h-9">
         <img 
@@ -60,14 +60,14 @@ const ProjectImageCollage: React.FC<ProjectImageCollageProps> = ({ images, title
         {/* Navigation Arrows */}
         <button 
           onClick={goToPrevious} 
-          className="absolute top-1/2 left-2 -translate-y-1/2 bg-primary/50 text-light-slate p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary/80 z-10 focus:outline-none focus:ring-2 focus:ring-accent"
+          className="absolute top-1/2 left-2 -translate-y-1/2 bg-primary/50 text-light-slate p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary/80 z-10 focus:outline-none focus:ring-2 focus:ring-accent-pink"
           aria-label="Previous image"
         >
           <ChevronLeft size={24} />
         </button>
         <button 
           onClick={goToNext} 
-          className="absolute top-1/2 right-2 -translate-y-1/2 bg-primary/50 text-light-slate p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary/80 z-10 focus:outline-none focus:ring-2 focus:ring-accent"
+          className="absolute top-1/2 right-2 -translate-y-1/2 bg-primary/50 text-light-slate p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary/80 z-10 focus:outline-none focus:ring-2 focus:ring-accent-cyan"
           aria-label="Next image"
         >
           <ChevronRight size={24} />
@@ -80,7 +80,7 @@ const ProjectImageCollage: React.FC<ProjectImageCollageProps> = ({ images, title
           <button 
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-16 h-10 rounded-sm overflow-hidden border-2 transition-all duration-300 ease-custom-bezier focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-accent ${currentIndex === index ? 'border-accent scale-110' : 'border-transparent hover:border-dark-slate opacity-60 hover:opacity-100'}`}
+            className={`w-16 h-10 rounded-sm overflow-hidden border-2 transition-all duration-300 ease-custom-bezier focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-accent-cyan ${currentIndex === index ? 'border-accent-cyan scale-110' : 'border-transparent hover:border-dark-slate opacity-60 hover:opacity-100'}`}
             aria-label={`Go to image ${index + 1}`}
           >
             <img 

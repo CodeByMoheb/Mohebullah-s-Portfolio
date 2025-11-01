@@ -134,12 +134,12 @@ export const PROJECTS_DATA: Project[] = [
         description: 'A cutting-edge machine learning project to classify Alzheimer’s disease stages from brain imaging data, leveraging a state-of-the-art Swin Transformer model for high accuracy.',
         tags: ['Python', 'TensorFlow', 'Swin Transformer', 'NumPy'],
         images: [
-            'https://placehold.co/600x400/112240/8892b0?text=AI+Image+1', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+2', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+3', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+4', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+5', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+6', // Replace with your image link
+            'https://placehold.co/600x400/0D0D2B/00F2EA?text=AI+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FF007A?text=AI+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FFD60A?text=AI+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/00F2EA?text=AI+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FF007A?text=AI+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FFD60A?text=AI+Image+6', // Replace with your image link
         ],
         githubUrl: 'https://github.com/codebymoheb',
         year: '2025',
@@ -149,12 +149,12 @@ export const PROJECTS_DATA: Project[] = [
         description: 'A practical web application to simplify meal planning and expense tracking for groups. Developed using .NET MVC, it offers an intuitive interface for managing daily meals and finances.',
         tags: ['.NET MVC', 'XAMPP (MySQL)', 'HTML/CSS'],
         images: [
-            'https://placehold.co/600x400/112240/8892b0?text=Meal+Image+1', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+2', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+3', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+4', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+5', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+6', // Replace with your image link
+            'https://placehold.co/600x400/0D0D2B/00F2EA?text=Meal+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FF007A?text=Meal+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FFD60A?text=Meal+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/00F2EA?text=Meal+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FF007A?text=Meal+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FFD60A?text=Meal+Image+6', // Replace with your image link
         ],
         githubUrl: 'https://github.com/codebymoheb',
         year: '2024',
@@ -164,12 +164,12 @@ export const PROJECTS_DATA: Project[] = [
         description: 'A robust system for managing all aspects of hostel operations, including resident information, room allocation, fee collection, and expense tracking, built with ASP.NET MVC.',
         tags: ['ASP.NET MVC', 'SQL Server', 'JavaScript'],
         images: [
-            'https://placehold.co/600x400/112240/8892b0?text=Hostel+Image+1', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+2', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+3', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+4', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+5', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+6', // Replace with your image link
+            'https://placehold.co/600x400/0D0D2B/00F2EA?text=Hostel+Img+1', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FF007A?text=Hostel+Img+2', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FFD60A?text=Hostel+Img+3', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/00F2EA?text=Hostel+Img+4', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FF007A?text=Hostel+Img+5', // Replace with your image link
+            'https://placehold.co/300x300/0D0D2B/FFD60A?text=Hostel+Img+6', // Replace with your image link
         ],
         githubUrl: 'https://github.com/codebymoheb',
         year: '2025',
@@ -189,14 +189,14 @@ export const CERTIFICATIONS_DATA: Certification[] = [
         issuer: 'Kaggle',
         date: 'Issued 2024',
         url: 'https://www.kaggle.com/learn/certification/mdmohebullah/intermediate-machine-learning',
-        image: 'https://placehold.co/100x100/112240/8892b0?text=Kaggle'
+        image: 'https://placehold.co/100x100/1C1C3A/00F2EA?text=Kaggle'
     },
     {
         title: 'Intro to Deep Learning',
         issuer: 'Kaggle',
         date: 'Issued 2025',
         url: 'https://www.kaggle.com/learn/intro-to-deep-learning',
-        image: 'https://placehold.co/100x100/112240/8892b0?text=Kaggle'
+        image: 'https://placehold.co/100x100/1C1C3A/FF007A?text=Kaggle'
     },
     {
         title: 'Data Science Math Skills',

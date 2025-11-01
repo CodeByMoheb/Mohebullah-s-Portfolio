@@ -12,7 +12,7 @@ const SocialLinks: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
-            className="text-slate hover:text-accent transform hover:-translate-y-1 transition-all duration-300"
+            className="text-slate hover:text-accent-cyan transform hover:-translate-y-1 transition-all duration-300"
           >
             {link.icon}
           </a>

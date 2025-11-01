@@ -14,12 +14,14 @@
         theme: {
           extend: {
             colors: {
-              'primary': '#0a192f',       // Navy
-              'secondary': '#112240',     // Light Navy
-              'accent': '#64ffda',        // Teal
-              'light-slate': '#ccd6f6',   // Lightest Slate (text)
-              'slate': '#8892b0',         // Slate (text)
-              'dark-slate': '#495670',      // Dark Slate
+              'primary': '#0D0D2B',       // Dark Purple/Blue
+              'secondary': '#1C1C3A',     // Lighter Purple/Blue
+              'accent-pink': '#FF007A',
+              'accent-cyan': '#00F2EA',
+              'accent-yellow': '#FFD60A',
+              'light-slate': '#E2E8F0',   // Lightest Slate (text)
+              'slate': '#94A3B8',         // Slate (text)
+              'dark-slate': '#334155',    // Dark Slate
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -47,8 +49,29 @@
 </script>
 <style>
   ::selection {
-    background-color: #233554;
-    color: #ccd6f6;
+    background-color: #FF007A;
+    color: #E2E8F0;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 15% 25%, rgba(255, 0, 122, 0.15), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(0, 242, 234, 0.15), transparent 40%);
+    animation: background-pan 20s linear infinite;
+    z-index: -1;
+    background-attachment: fixed;
+  }
+
+  @keyframes background-pan {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   @keyframes fadeInUp {
@@ -74,52 +97,22 @@
   .delay-500 { animation-delay: 500ms; }
 
   /* Animated Hamburger Icon Styles */
-  .hamburger-button {
-    width: 28px;
-    height: 24px;
-    position: relative;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-
   .hamburger-button .line {
+    background-color: #00F2EA;
     position: absolute;
     left: 0;
     height: 3px;
     width: 100%;
-    background-color: #64ffda; /* accent color */
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
   }
-
-  .hamburger-button .line.top {
-    top: 0;
-  }
-
-  .hamburger-button .line.middle {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .hamburger-button .line.bottom {
-    bottom: 0;
-  }
-
-  /* Open state transformations */
-  .hamburger-button .line.top.open {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  .hamburger-button .line.middle.open {
-    opacity: 0;
-  }
-
-  .hamburger-button .line.bottom.open {
-    bottom: 50%;
-    transform: translateY(50%) rotate(-45deg);
-  }
+  .hamburger-button { width: 28px; height: 24px; position: relative; background: transparent; border: none; cursor: pointer; }
+  .hamburger-button .line.top { top: 0; }
+  .hamburger-button .line.middle { top: 50%; transform: translateY(-50%); }
+  .hamburger-button .line.bottom { bottom: 0; }
+  .hamburger-button .line.top.open { top: 50%; transform: translateY(-50%) rotate(45deg); }
+  .hamburger-button .line.middle.open { opacity: 0; }
+  .hamburger-button .line.bottom.open { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
 
   /* Timeline Animation Styles */
   .timeline-entry {
@@ -130,6 +123,22 @@
   .timeline-entry.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(90deg, #FF007A, #00F2EA, #FFD60A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient-animate 8s linear infinite;
+  }
+
+  @keyframes gradient-animate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 200% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
 </style>

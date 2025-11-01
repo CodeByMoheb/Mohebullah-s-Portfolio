@@ -12,14 +12,14 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.name}
-                    className="text-slate hover:text-accent transition-colors duration-300"
+                    className="text-slate hover:text-accent-cyan transition-colors duration-300"
                 >
                     {link.icon}
                 </a>
             ))}
         </div>
         <div className="text-center text-sm text-slate font-mono">
-            <a href="https://github.com/codebymoheb/portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+            <a href="https://github.com/codebymoheb/portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors duration-300">
                 <p>Designed & Built by Md. Mohebullah</p>
             </a>
             <p className='mt-1'>All rights reserved © 2024</p>
