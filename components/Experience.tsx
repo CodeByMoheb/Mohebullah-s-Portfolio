@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionHeader from './SectionHeader';
 import { EXPERIENCE_DATA } from '../constants';
 import { ChevronRight } from 'lucide-react';
 
 const Experience: React.FC = () => {
+  const [showAll, setShowAll] = useState(false);
+  const INITIAL_ITEMS = 2;
+  const visibleExperiences = showAll ? EXPERIENCE_DATA : EXPERIENCE_DATA.slice(0, INITIAL_ITEMS);
+
   return (
     <section id="experience" className="py-24">
       <SectionHeader title="Where I've Worked" />
@@ -12,7 +16,7 @@ const Experience: React.FC = () => {
         <div className="absolute top-0 h-full w-0.5 bg-dark-slate left-5 md:left-1/2 md:-translate-x-1/2"></div>
 
         <div className="space-y-12">
-          {EXPERIENCE_DATA.map((item, index) => (
+          {visibleExperiences.map((item, index) => (
             <div key={index} className="relative">
               {/* Timeline Dot */}
               <div className="absolute w-5 h-5 bg-accent rounded-full left-5 -translate-x-[9px] mt-1 md:left-1/2 md:-translate-x-1/2 z-10 border-4 border-primary"></div>
@@ -45,6 +49,17 @@ const Experience: React.FC = () => {
           ))}
         </div>
       </div>
+      
+      {EXPERIENCE_DATA.length > INITIAL_ITEMS && (
+        <div className="text-center mt-12">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="inline-block px-8 py-4 border border-accent text-accent rounded-sm hover:bg-accent/10 transition-all duration-300 ease-custom-bezier font-mono"
+          >
+            {showAll ? 'Show Less' : 'Show More'}
+          </button>
+        </div>
+      )}
     </section>
   );
 };

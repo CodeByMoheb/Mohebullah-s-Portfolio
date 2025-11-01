@@ -37,7 +37,7 @@ function App() {
   };
 
   useEffect(() => {
-    const sections: Page[] = ['about', 'experience', 'skills', 'projects', 'certifications', 'contact'];
+    const sections: Page[] = ['projects', 'about', 'experience', 'skills', 'certifications', 'contact'];
     const observer = new IntersectionObserver((entries) => {
       if (scrollNavigating.current) return;
       entries.forEach(entry => {
@@ -86,10 +86,10 @@ function App() {
 
       <main className="container mx-auto px-6 md:px-24 lg:px-48">
         <div id="hero"><Hero onNavigate={handleHeroNavigate} /></div>
+        <div id="projects"><Projects /></div>
         <div id="about"><About /></div>
         <div id="experience"><Experience /></div>
         <div id="skills"><Skills /></div>
-        <div id="projects"><Projects /></div>
         <div id="certifications"><Certifications /></div>
         <div id="contact"><Contact /></div>
         <Footer />

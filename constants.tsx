@@ -11,10 +11,10 @@ import { TikTokIcon, WebsiteIcon } from './components/icons/TechIcons';
 
 
 export const NAV_LINKS: NavLink[] = [
+  { name: 'Projects', page: 'projects' },
   { name: 'About', page: 'about' },
   { name: 'Experience', page: 'experience' },
   { name: 'Skills', page: 'skills' },
-  { name: 'Projects', page: 'projects' },
   { name: 'Certifications', page: 'certifications' },
   { name: 'Contact', page: 'contact' },
 ];
@@ -91,12 +91,19 @@ export const SKILLS_DATA: SkillCategory[] = [
   },
 ];
 
+
 export const PROJECTS_DATA: Project[] = [
     {
         title: 'E-Group Ltd Website',
         description: 'Led the end-to-end design and development of the official corporate website for a leading IT solutions provider. The site serves as the primary digital marketing and client-facing platform.',
         tags: ['ASP.NET Core', 'SQL Server', 'JavaScript', 'Deployment'],
-        image: 'https://placehold.co/600x400/0a192f/64ffda?text=E-Group+Ltd',
+        images: [
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761972852/dhn0flmop0ppqrk2nrzo.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761972852/wfvgdzwwkfi1fosk5g1p.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761972852/jal3nhz90o11kmoi6mvf.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761972852/uzmecrsssdriqzz1ba5v.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761973047/sxdqupat9vu2xdjlgfru.png', // Replace with your image link
+        ],
         liveUrl: 'https://e-groupltd.com',
         githubUrl: 'https://github.com/codebymoheb',
         featured: true,
@@ -113,7 +120,14 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Uttara13 Community Website',
         description: 'Architected and built a comprehensive digital hub for the Uttara Sector 13 residential community, fostering connection and communication among residents.',
         tags: ['ASP.NET Core', 'SQL Server', 'Frontend', 'Maintenance'],
-        image: 'https://placehold.co/600x400/0a192f/64ffda?text=Uttara13.org',
+        images: [
+            'https://placehold.co/600x400/0a192f/64ffda?text=Uttara13+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+6', // Replace with your image link
+        ],
         liveUrl: 'https://uttara13.org',
         githubUrl: 'https://github.com/codebymoheb',
         featured: true,
@@ -130,7 +144,14 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Sector 13 Welfare Society – Management',
         description: 'A comprehensive digital management system for a community welfare society, built to streamline operations, handle member information, manage events, and improve communications.',
         tags: ['ASP.NET MVC', 'Blazor Server', 'SQL Server'],
-        image: 'https://placehold.co/600x400/112240/8892b0?text=Welfare+System',
+        images: [
+            'https://placehold.co/600x400/112240/8892b0?text=Welfare+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+6', // Replace with your image link
+        ],
         githubUrl: 'https://github.com/CodeByMoheb/Sector-13-wllfare-socity-project',
         year: '2025',
     },
@@ -138,7 +159,14 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Alzheimer’s Disease Classification',
         description: 'A cutting-edge machine learning project to classify Alzheimer’s disease stages from brain imaging data, leveraging a state-of-the-art Swin Transformer model for high accuracy.',
         tags: ['Python', 'TensorFlow', 'Swin Transformer', 'NumPy'],
-        image: 'https://placehold.co/600x400/112240/8892b0?text=AI+Brain+Scan',
+        images: [
+            'https://placehold.co/600x400/112240/8892b0?text=AI+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=AI+Image+6', // Replace with your image link
+        ],
         githubUrl: 'https://github.com/codebymoheb',
         year: '2025',
     },
@@ -146,7 +174,14 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Meal Management System',
         description: 'A practical web application to simplify meal planning and expense tracking for groups. Developed using .NET MVC, it offers an intuitive interface for managing daily meals and finances.',
         tags: ['.NET MVC', 'XAMPP (MySQL)', 'HTML/CSS'],
-        image: 'https://placehold.co/600x400/112240/8892b0?text=Meal+System',
+        images: [
+            'https://placehold.co/600x400/112240/8892b0?text=Meal+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Meal+Image+6', // Replace with your image link
+        ],
         githubUrl: 'https://github.com/codebymoheb',
         year: '2024',
     },
@@ -154,7 +189,14 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Hostel Management System',
         description: 'A robust system for managing all aspects of hostel operations, including resident information, room allocation, fee collection, and expense tracking, built with ASP.NET MVC.',
         tags: ['ASP.NET MVC', 'SQL Server', 'JavaScript'],
-        image: 'https://placehold.co/600x400/112240/8892b0?text=Hostel+System',
+        images: [
+            'https://placehold.co/600x400/112240/8892b0?text=Hostel+Image+1', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+2', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+3', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+4', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+5', // Replace with your image link
+            'https://placehold.co/300x300/112240/8892b0?text=Hostel+Image+6', // Replace with your image link
+        ],
         githubUrl: 'https://github.com/codebymoheb',
         year: '2025',
     },

@@ -29,7 +29,7 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  image: string;
+  images: string[];
   liveUrl?: string;
   githubUrl: string;
   featured?: boolean;
