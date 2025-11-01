@@ -135,9 +135,25 @@ const OtherProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   )
 }
 
+const PROJECTS_PER_PAGE = 3;
+
 const Projects: React.FC = () => {
     const featuredProjects = PROJECTS_DATA.filter(p => p.featured);
     const otherProjects = PROJECTS_DATA.filter(p => !p.featured);
+    
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const totalPages = Math.ceil(otherProjects.length / PROJECTS_PER_PAGE);
+    const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+    const currentOtherProjects = otherProjects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
+  
+    const goToNextPage = () => {
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    };
+  
+    const goToPrevPage = () => {
+      setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    };
 
   return (
     <section id="projects" className="py-24">
@@ -152,9 +168,33 @@ const Projects: React.FC = () => {
         <h3 className="text-2xl font-bold text-light-slate">Other Noteworthy Projects</h3>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {otherProjects.map(project => <OtherProjectCard key={project.title} project={project} />)}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[550px]">
+          {currentOtherProjects.map(project => <OtherProjectCard key={project.title} project={project} />)}
       </div>
+
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center mt-12 space-x-6">
+          <button
+            onClick={goToPrevPage}
+            disabled={currentPage === 1}
+            className="px-6 py-2 border border-accent/50 text-accent rounded-sm hover:bg-accent/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-mono text-sm"
+            aria-label="Go to previous page"
+          >
+            Previous
+          </button>
+          <span className="text-slate font-mono text-sm">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className="px-6 py-2 border border-accent/50 text-accent rounded-sm hover:bg-accent/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-mono text-sm"
+            aria-label="Go to next page"
+          >
+            Next
+          </button>
+        </div>
+      )}
     </section>
   );
 };

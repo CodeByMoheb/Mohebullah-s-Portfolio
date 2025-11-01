@@ -105,16 +105,16 @@ export const PROJECTS_DATA: Project[] = [
         ]
     },
     {
-        title: 'Uttara13 Community Website',
+        title: 'Welfare Society Management System for Uttara 13 Welfare Society',
         description: 'Architected and built a comprehensive digital hub for the Uttara Sector 13 residential community, fostering connection and communication among residents.',
         tags: ['ASP.NET Core', 'SQL Server', 'Frontend', 'Maintenance'],
         images: [
-            'https://placehold.co/600x400/0a192f/64ffda?text=Uttara13+Image+1', // Replace with your image link
-            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+2', // Replace with your image link
-            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+3', // Replace with your image link
-            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+4', // Replace with your image link
-            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+5', // Replace with your image link
-            'https://placehold.co/300x300/0a192f/64ffda?text=Uttara13+Image+6', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761974394/jaurb69evqt4cmvkm5wj.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761974394/nsnbuygczosaezmvty1l.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761974394/kwpgdinuzwrh5zbbomfw.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761974393/holrc9bbpbipo4pxfvyh.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761974393/unxf1bsac0nhaiceiuhf.png', // Replace with your image link
+            'https://res.cloudinary.com/dzlfgx5d7/image/upload/v1761974393/holrc9bbpbipo4pxfvyh.png', // Replace with your image link
         ],
         liveUrl: 'https://uttara13.org',
         githubUrl: 'https://github.com/codebymoheb',
@@ -128,21 +128,7 @@ export const PROJECTS_DATA: Project[] = [
             'Integrated community forum for resident discussions.'
         ]
     },
-    {
-        title: 'Sector 13 Welfare Society – Management',
-        description: 'A comprehensive digital management system for a community welfare society, built to streamline operations, handle member information, manage events, and improve communications.',
-        tags: ['ASP.NET MVC', 'Blazor Server', 'SQL Server'],
-        images: [
-            'https://placehold.co/600x400/112240/8892b0?text=Welfare+Image+1', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+2', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+3', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+4', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+5', // Replace with your image link
-            'https://placehold.co/300x300/112240/8892b0?text=Welfare+Image+6', // Replace with your image link
-        ],
-        githubUrl: 'https://github.com/CodeByMoheb/Sector-13-wllfare-socity-project',
-        year: '2025',
-    },
+   
     {
         title: 'Alzheimer’s Disease Classification',
         description: 'A cutting-edge machine learning project to classify Alzheimer’s disease stages from brain imaging data, leveraging a state-of-the-art Swin Transformer model for high accuracy.',
@@ -196,7 +182,7 @@ export const CERTIFICATIONS_DATA: Certification[] = [
         issuer: 'Kaggle',
         date: 'Issued 2024',
         url: 'https://www.kaggle.com/learn/certification/mdmohebullah/intro-to-machine-learning',
-        image: 'https://placehold.co/100x100/112240/8892b0?text=Kaggle'
+        image: 'https://www.kaggle.com/learn/certification/mdmohebullah/intro-to-machine-learning'
     },
     {
         title: 'Intermediate Machine Learning',
@@ -217,14 +203,14 @@ export const CERTIFICATIONS_DATA: Certification[] = [
         issuer: 'Coursera',
         date: 'Issued 2025',
         url: 'https://www.coursera.org/account/accomplishments/verify/8WHPVSVIP498',
-        image: 'https://placehold.co/100x100/112240/8892b0?text=Coursera'
+        image: 'https://www.coursera.org/account/accomplishments/verify/8WHPVSVIP498'
     },
     {
         title: 'Basic Graphic Design',
         issuer: 'Pentanik IT BD',
         date: 'Issued 2021',
         url: 'https://drive.google.com/file/d/1JP2pzU7PZLxd7WYA-m33qhqWbVUm4_lg/view',
-        image: 'https://placehold.co/100x100/112240/8892b0?text=Pentanik'
+        image: 'https://drive.google.com/file/d/1JP2pzU7PZLxd7WYA-m33qhqWbVUm4_lg/view'
     }
 ];
 
