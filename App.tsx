@@ -68,7 +68,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-primary text-slate font-sans selection:bg-accent/20">
+    <div className="bg-primary text-slate font-sans">
       <Header currentPage={currentPage} onNavigate={handleNavigate} />
       
       <div className="hidden md:block fixed bottom-0 left-12 w-10 z-30">

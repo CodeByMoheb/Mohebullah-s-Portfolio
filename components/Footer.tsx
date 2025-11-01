@@ -18,9 +18,11 @@ const Footer: React.FC = () => {
                 </a>
             ))}
         </div>
-        <div className="text-center text-sm text-dark-slate font-mono">
-            <p>Designed & Built by Md. Mohebullah</p>
-            <p>All rights reserved © 2024</p>
+        <div className="text-center text-sm text-slate font-mono">
+            <a href="https://github.com/codebymoheb/portfolio" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+                <p>Designed & Built by Md. Mohebullah</p>
+            </a>
+            <p className='mt-1'>All rights reserved © 2024</p>
         </div>
     </footer>
   );

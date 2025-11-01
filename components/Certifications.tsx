@@ -14,7 +14,7 @@ const Certifications: React.FC = () => {
             href={cert.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-6 bg-secondary p-6 rounded-sm shadow-md hover:shadow-glow hover:-translate-y-1.5 transition-all duration-300 ease-custom-bezier"
+            className="group flex items-center gap-6 bg-secondary p-6 rounded-sm shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-custom-bezier"
           >
             <img src={cert.image} alt={cert.title} className="w-24 h-24 object-contain rounded-sm bg-light-slate p-2" />
             <div className="flex-1">

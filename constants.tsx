@@ -6,7 +6,7 @@ import {
   TensorFlowIcon, PandasIcon, NumpyIcon, MatplotlibIcon, MySqlIcon,
   VsCodeIcon, JupyterIcon, ColabIcon, GitHubIcon
 } from './components/icons/TechIcons';
-import { Github, Linkedin, Facebook, Youtube, Dna, Mail } from 'lucide-react';
+import { Github, Linkedin, Facebook, Youtube } from 'lucide-react';
 import { TikTokIcon, WebsiteIcon } from './components/icons/TechIcons';
 
 
@@ -96,7 +96,7 @@ export const PROJECTS_DATA: Project[] = [
         title: 'E-Group Ltd Website',
         description: 'Led the end-to-end design and development of the official corporate website for a leading IT solutions provider. The site serves as the primary digital marketing and client-facing platform.',
         tags: ['ASP.NET Core', 'SQL Server', 'JavaScript', 'Deployment'],
-        image: 'https://placehold.co/600x400/1a2a44/ff6c00?text=E-Group+Ltd',
+        image: 'https://placehold.co/600x400/0a192f/64ffda?text=E-Group+Ltd',
         liveUrl: 'https://e-groupltd.com',
         githubUrl: 'https://github.com/codebymoheb',
         featured: true,
@@ -113,7 +113,7 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Uttara13 Community Website',
         description: 'Architected and built a comprehensive digital hub for the Uttara Sector 13 residential community, fostering connection and communication among residents.',
         tags: ['ASP.NET Core', 'SQL Server', 'Frontend', 'Maintenance'],
-        image: 'https://placehold.co/600x400/1a2a44/ff6c00?text=Uttara13.org',
+        image: 'https://placehold.co/600x400/0a192f/64ffda?text=Uttara13.org',
         liveUrl: 'https://uttara13.org',
         githubUrl: 'https://github.com/codebymoheb',
         featured: true,
@@ -130,7 +130,7 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Sector 13 Welfare Society – Management',
         description: 'A comprehensive digital management system for a community welfare society, built to streamline operations, handle member information, manage events, and improve communications.',
         tags: ['ASP.NET MVC', 'Blazor Server', 'SQL Server'],
-        image: 'https://placehold.co/600x400/1a2a44/7888a1?text=Welfare+System',
+        image: 'https://placehold.co/600x400/112240/8892b0?text=Welfare+System',
         githubUrl: 'https://github.com/CodeByMoheb/Sector-13-wllfare-socity-project',
         year: '2025',
     },
@@ -138,7 +138,7 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Alzheimer’s Disease Classification',
         description: 'A cutting-edge machine learning project to classify Alzheimer’s disease stages from brain imaging data, leveraging a state-of-the-art Swin Transformer model for high accuracy.',
         tags: ['Python', 'TensorFlow', 'Swin Transformer', 'NumPy'],
-        image: 'https://placehold.co/600x400/1a2a44/7888a1?text=AI+Brain+Scan',
+        image: 'https://placehold.co/600x400/112240/8892b0?text=AI+Brain+Scan',
         githubUrl: 'https://github.com/codebymoheb',
         year: '2025',
     },
@@ -146,7 +146,7 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Meal Management System',
         description: 'A practical web application to simplify meal planning and expense tracking for groups. Developed using .NET MVC, it offers an intuitive interface for managing daily meals and finances.',
         tags: ['.NET MVC', 'XAMPP (MySQL)', 'HTML/CSS'],
-        image: 'https://placehold.co/600x400/1a2a44/7888a1?text=Meal+System',
+        image: 'https://placehold.co/600x400/112240/8892b0?text=Meal+System',
         githubUrl: 'https://github.com/codebymoheb',
         year: '2024',
     },
@@ -154,7 +154,7 @@ export const PROJECTS_DATA: Project[] = [
         title: 'Hostel Management System',
         description: 'A robust system for managing all aspects of hostel operations, including resident information, room allocation, fee collection, and expense tracking, built with ASP.NET MVC.',
         tags: ['ASP.NET MVC', 'SQL Server', 'JavaScript'],
-        image: 'https://placehold.co/600x400/1a2a44/7888a1?text=Hostel+System',
+        image: 'https://placehold.co/600x400/112240/8892b0?text=Hostel+System',
         githubUrl: 'https://github.com/codebymoheb',
         year: '2025',
     },
@@ -166,35 +166,35 @@ export const CERTIFICATIONS_DATA: Certification[] = [
         issuer: 'Kaggle',
         date: 'Issued 2024',
         url: 'https://www.kaggle.com/learn/certification/mdmohebullah/intro-to-machine-learning',
-        image: 'https://placehold.co/100x100/1a2a44/7888a1?text=Kaggle'
+        image: 'https://placehold.co/100x100/112240/8892b0?text=Kaggle'
     },
     {
         title: 'Intermediate Machine Learning',
         issuer: 'Kaggle',
         date: 'Issued 2024',
         url: 'https://www.kaggle.com/learn/certification/mdmohebullah/intermediate-machine-learning',
-        image: 'https://placehold.co/100x100/1a2a44/7888a1?text=Kaggle'
+        image: 'https://placehold.co/100x100/112240/8892b0?text=Kaggle'
     },
     {
         title: 'Intro to Deep Learning',
         issuer: 'Kaggle',
         date: 'Issued 2025',
         url: 'https://www.kaggle.com/learn/intro-to-deep-learning',
-        image: 'https://placehold.co/100x100/1a2a44/7888a1?text=Kaggle'
+        image: 'https://placehold.co/100x100/112240/8892b0?text=Kaggle'
     },
     {
         title: 'Data Science Math Skills',
         issuer: 'Coursera',
         date: 'Issued 2025',
         url: 'https://www.coursera.org/account/accomplishments/verify/8WHPVSVIP498',
-        image: 'https://placehold.co/100x100/1a2a44/7888a1?text=Coursera'
+        image: 'https://placehold.co/100x100/112240/8892b0?text=Coursera'
     },
     {
         title: 'Basic Graphic Design',
         issuer: 'Pentanik IT BD',
         date: 'Issued 2021',
         url: 'https://drive.google.com/file/d/1JP2pzU7PZLxd7WYA-m33qhqWbVUm4_lg/view',
-        image: 'https://placehold.co/100x100/1a2a44/7888a1?text=Pentanik'
+        image: 'https://placehold.co/100x100/112240/8892b0?text=Pentanik'
     }
 ];
 
